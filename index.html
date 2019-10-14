@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Backbone</title>
+    <script data-main="main" src="lib/require.js"></script>
+</head>
+
+<body>
+<div id="app"></div>
+</body>
+<script>
+require(['lib/require.config'], function() {
+    require(['src/index'], function(Index) {
+        new Index('#app');
+    });
+});
+</script>
+</html>
