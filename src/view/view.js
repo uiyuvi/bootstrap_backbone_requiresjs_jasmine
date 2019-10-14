@@ -1,4 +1,4 @@
-define(['backbone', 'jquery','../presenter/presenter'], function(Backbone, $, Presenter) {
+define(['backbone', 'jquery','../presenter/presenter','text!../template/template.html'], function(Backbone, $, Presenter,template) {
     "use strict";
     return Backbone.View.extend({
         initialize: function(selector) {
@@ -6,7 +6,8 @@ define(['backbone', 'jquery','../presenter/presenter'], function(Backbone, $, Pr
             new Presenter (this);
         },
         showText: function(text){
-            $(this.selector).html(text);
+            $(this.selector).html(template);
+            $(this.selector).append('Text passed from presenter'+text);
         }
     })
 })
