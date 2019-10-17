@@ -1,7 +1,18 @@
-(function() {
-    'use strict';
+var tests = [];
+for (var file in window.__karma__.files) {
+  if (window.__karma__.files.hasOwnProperty(file)) {
+    if (/\.spec.js$/.test(file)) {
+      tests.push(file);
+    }
+  }
+}
+
+
 requirejs.config({
-	paths: {
+    // Karma serves files from '/base'
+    baseUrl: '/base/src',
+
+    paths: {
         "backbone": "../lib/backbone",
         "src": "../../src",
         "text": "../lib/text",
@@ -23,11 +34,11 @@ requirejs.config({
         'jasmine-boot': {
             deps : ['jasmine', 'jasmine-html']
         }
-	}
+	},
+
+    // ask Require.js to load these files (all our tests)
+    deps: tests,
+
+    // start test run, once Require.js is done
+    callback: window.__karma__.start
 });
-require(['jasmine-boot'], function () {
-    require(['view/view.spec'], function(){
-        window.onload();
-    })
-});
-})()
