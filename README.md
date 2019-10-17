@@ -10,5 +10,5 @@ Open [http://localhost:9000](http://localhost:9000) to view it in the browser.
 
 ### `npm test`
 
-Runs the test. (Still configuration has to be done)
-Open [http://localhost:9000/spec/](http://localhost:9000/spec/) in browser to Execute tests
+Runs the test using KARMA.
+Also Open [http://localhost:9000/spec/](http://localhost:9000/spec/) in browser to Execute tests.
